@@ -1,0 +1,16 @@
+services:
+  app:
+    image: jirauha/devops-docker-publish:latest
+    platform: linux/amd64
+    container_name: devops-docker-publish
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: devops-docker-publish-watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --label-enable --interval 30 --cleanup
