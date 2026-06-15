@@ -6,8 +6,10 @@ https://devops-docker-publish-latest.onrender.com/
 
 ### Run locally
 
+```
 npm i
 npm start
+```
 
 Access with browser http://localhost:8080
 
